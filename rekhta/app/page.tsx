@@ -54,7 +54,17 @@ export default function Lughat() {
           <WordList results={results} onOpen={setSelectedId} />
         ) : (
           /* Dashboard expects data to be HomeResponse */
+          <>
           <Dashboard data={homeData} onOpen={setSelectedId} />
+
+          /* Credit Section */
+            <footer className="pt-10 pb-6 text-center animate-in fade-in slide-in-from-bottom-2 duration-700">
+              <div className="w-12 h-0.5 bg-slate-200 mx-auto mb-4 rounded-full"></div>
+              <p className="text-xs text-slate-400 font-medium tracking-wide">
+                A hobby project by <span className="text-slate-600 font-semibold">Younis Majeed</span>
+              </p>
+            </footer>
+            </>
         )}
       </div>
 
