@@ -1,3 +1,14 @@
+// 1. For Search Results (Simple Structure)
+// Used in: WordList.tsx, SearchBar.tsx
+export interface Word {
+  id: string;
+  word: string;
+  meaning: string | null;
+  lang?: number;
+}
+
+// 2. For Home Page & Details (Complex Structure)
+// Used in: Dashboard.tsx, DetailModal.tsx
 
 // The individual word item inside a section
 export interface WordItem {
