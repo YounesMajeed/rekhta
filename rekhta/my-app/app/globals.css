@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* Point to the new Noto variable */
+  --font-nastaliq: var(--font-noto); 
+}
+
+:root {
+  --foreground-rgb: 15, 23, 42;
+  --background-start-rgb: 248, 250, 252;
+  --background-end-rgb: 248, 250, 252;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Custom Urdu Class */
+.nastaliq {
+  font-family: var(--font-nastaliq);
+  line-height: 2.2; /* Noto is slightly more compact than Gulzar, so 2.2 is perfect */
+  padding-bottom: 0.5rem;
+}
