@@ -25,25 +25,22 @@
 // };
 
 
-import { HomeResponse, Word } from './types';
-
-const API_PROXY = '/api/rekhta';
+import { HomeResponse, Word, DetailedWordResponse } from './types';
+import apiClient from './apiClient';
 
 export const api = {
   getHome: async (): Promise<HomeResponse> => {
-    const res = await fetch(`${API_PROXY}?action=home`);
-    return res.json();
+    const { data } = await apiClient.get('?action=home');
+    return data;
   },
-  
-  // Search returns the simple 'Word' type
+
   search: async (query: string): Promise<Word[]> => {
-    const res = await fetch(`${API_PROXY}?action=search&q=${query}`);
-    const data = await res.json();
+    const { data } = await apiClient.get('?action=search&q=' + encodeURIComponent(query));
     return data.WordList || [];
   },
 
-  getDetails: async (id: string): Promise<any> => {
-    const res = await fetch(`${API_PROXY}?action=detail&id=${id}`);
-    return res.json();
-  }
+  getDetails: async (id: string): Promise<DetailedWordResponse> => {
+    const { data } = await apiClient.get('?action=detail&id=' + encodeURIComponent(id));
+    return data;
+  },
 };

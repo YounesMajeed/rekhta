@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  /* Point to the new Noto variable */
-  --font-nastaliq: var(--font-noto); 
+  /* Font families */
+  --font-geist: var(--font-geist);
+  --font-playfair: var(--font-playfair);
+  --font-noto-urdu: var(--font-noto-urdu);
+  --font-noto-hindi: var(--font-noto-hindi);
 }
 
 :root {
@@ -19,11 +22,39 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-family: var(--font-geist);
 }
 
-/* Custom Urdu Class */
+/* English/Default Text */
+.font-english {
+  font-family: var(--font-geist);
+}
+
+/* Urdu Nastaliq */
+.font-urdu,
 .nastaliq {
-  font-family: var(--font-nastaliq);
-  line-height: 2.2; /* Noto is slightly more compact than Gulzar, so 2.2 is perfect */
+  font-family: var(--font-noto-urdu);
+  line-height: 2.2;
   padding-bottom: 0.5rem;
+}
+
+/* Hindi Devanagari */
+.font-hindi {
+  font-family: var(--font-noto-hindi);
+  line-height: 1.6;
+}
+
+/* Display/Serif Font */
+.font-display {
+  font-family: var(--font-playfair);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: calc(200% + 200px) 0;
+  }
 }

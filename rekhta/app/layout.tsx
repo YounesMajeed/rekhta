@@ -1,15 +1,25 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display, Noto_Nastaliq_Urdu } from 'next/font/google'; // <--- Change Import
+import { Geist, Playfair_Display, Noto_Nastaliq_Urdu, Noto_Sans_Devanagari } from 'next/font/google';
+import { Providers } from '@/components/Providers';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+// Modern font for English
+const geist = Geist({ subsets: ['latin'], variable: '--font-geist' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
 
-// Initialize Noto Nastaliq
-const noto = Noto_Nastaliq_Urdu({ 
+// Initialize Noto Nastaliq for Urdu
+const notoUrdu = Noto_Nastaliq_Urdu({ 
   subsets: ['arabic'], 
-  weight: ['400', '700'], // Noto supports bold weights too!
-  variable: '--font-noto',
+  weight: ['400', '700'],
+  variable: '--font-noto-urdu',
+  display: 'swap',
+});
+
+// Initialize Noto Sans Devanagari for Hindi
+const notoHindi = Noto_Sans_Devanagari({
+  subsets: ['devanagari'],
+  weight: ['400', '700'],
+  variable: '--font-noto-hindi',
   display: 'swap',
 });
 
@@ -25,9 +35,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* Add the new variable to the body class list */}
-      <body className={`${inter.variable} ${playfair.variable} ${noto.variable} font-sans antialiased bg-slate-50`}>
-        {children}
+      <body className={`${geist.variable} ${playfair.variable} ${notoUrdu.variable} ${notoHindi.variable} font-sans antialiased bg-slate-50`}>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

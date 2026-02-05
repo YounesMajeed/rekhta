@@ -19,10 +19,10 @@ export default function WordList({ results, onOpen }: WordListProps) {
           className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm active:scale-95 transition-transform cursor-pointer flex justify-between items-center"
         >
           <div>
-            <h3 className="text-xl font-serif font-medium text-slate-800">
+            <h3 className="text-xl font-serif font-medium text-slate-800 font-english">
               {item.word}
             </h3>
-            <p className="text-sm text-slate-500 line-clamp-1">
+            <p className="text-sm text-slate-500 line-clamp-1 font-english">
               {item.meaning || 'Tap to view details'}
             </p>
           </div>

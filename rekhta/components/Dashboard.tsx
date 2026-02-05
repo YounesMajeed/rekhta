@@ -40,8 +40,8 @@ export default function Dashboard({ data, onOpen }: DashboardProps) {
             </div>
             
             <div className="mt-4">
-                <h2 className="text-4xl font-serif mb-1 nastaliq leading-loose" dir="rtl">{wod.W3}</h2>
-                <h3 className="text-xl opacity-90 font-medium">{wod.W1}</h3>
+                <h2 className="text-4xl font-serif mb-1 font-urdu leading-loose" dir="rtl">{wod.W3}</h2>
+                <h3 className="text-xl opacity-90 font-medium font-english">{wod.W1}</h3>
             </div>
             
             <p className="opacity-80 text-sm mt-2 line-clamp-2 border-t border-white/20 pt-2">
@@ -62,7 +62,7 @@ export default function Dashboard({ data, onOpen }: DashboardProps) {
             </div>
             
             {/* Proverb Construction: Join the RW array if W3 is missing */}
-            <h2 className="text-2xl font-serif mb-2 nastaliq leading-relaxed text-right" dir="rtl">
+            <h2 className="text-2xl font-serif mb-2 font-urdu leading-relaxed text-right" dir="rtl">
                 {proverb.RW ? proverb.RW.map(w => w.W).join(' ') : proverb.W3}
             </h2>
             
@@ -86,12 +86,12 @@ export default function Dashboard({ data, onOpen }: DashboardProps) {
                 className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm active:scale-95 transition-transform cursor-pointer group"
               >
                 <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-serif text-xl text-slate-800 nastaliq group-hover:text-violet-600 transition-colors" dir="rtl">
+                    <h4 className="font-serif text-xl text-slate-800 font-urdu group-hover:text-violet-600 transition-colors" dir="rtl">
                         {item.W3}
                     </h4>
                 </div>
-                <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">{item.W1}</p>
-                <p className="text-xs text-slate-400 line-clamp-1">{item.WM}</p>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1 font-english">{item.W1}</p>
+                <p className="text-xs text-slate-400 line-clamp-1 font-english">{item.WM}</p>
               </div>
             ))}
           </div>

@@ -9,7 +9,7 @@ export default function SearchBar({ query, setQuery }: SearchBarProps) {
   return (
     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 px-4 py-3">
       <div className="max-w-md mx-auto">
-        <h1 className="text-xl font-bold mb-3 tracking-tight">
+        <h1 className="text-xl font-bold mb-3 tracking-tight font-english">
           Lughat<span className="text-violet-600">.</span>
         </h1>
         <div className="relative">
@@ -19,7 +19,7 @@ export default function SearchBar({ query, setQuery }: SearchBarProps) {
             placeholder="Search words..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full bg-slate-100 border-none rounded-xl py-3 pl-10 pr-10 focus:ring-2 focus:ring-violet-500 outline-none transition-all"
+            className="w-full bg-slate-100 border-none rounded-xl py-3 pl-10 pr-10 focus:ring-2 focus:ring-violet-500 outline-none transition-all font-english"
           />
           {query && (
             <button
